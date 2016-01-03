@@ -52,9 +52,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Log.i("onCreate: ", String.valueOf(categoryList));
-        ;
 
-        TrackCategoryListAdapter adapter = new TrackCategoryListAdapter(this, R.layout.track_list_template, categoryList);
+
+
+        TrackCategoryListAdapter adapter = new TrackCategoryListAdapter(this, R.layout.category_list_template, categoryList);
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
@@ -69,17 +70,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        //------
-//        startQue();
-//        System.out.println(getJson(url));
-//((JSONObject)((JSONObject) response).get("_links").get("categories").get(0)).get("href")
     }
 
     public void startQue() {
-        System.out.println("++++++++ GET2 &&&&&&&&");
-
-
         RequestQueue mRequestQueue;
 
 // Instantiate the cache
@@ -101,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                        System.out.println("++++++++ RESPONSE &&&&&&&&");
+                        System.out.println("response = " + response);
                         System.out.println(response);
                     }
                 }, new Response.ErrorListener() {

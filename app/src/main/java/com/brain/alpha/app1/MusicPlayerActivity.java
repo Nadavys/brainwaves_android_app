@@ -57,7 +57,7 @@ public class MusicPlayerActivity extends AppCompatActivity implements MediaContr
         String trackUri = intent.getStringExtra(TrackListActivity.TRACK_URI);
         Track track = DataService.getRemoteTrack(trackUri);
         //todo: chagneto media
-        audioFile = track.getUriLinkTo("track");
+        audioFile = track.getUriLinkTo("media");
         Log.i("audioFile ", audioFile);
         ((TextView) findViewById(R.id.playerTrackName)).setText(track.getName());
         ((TextView)findViewById(R.id.playerDescription)).setText(track.getDescription());
