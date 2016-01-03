@@ -32,11 +32,8 @@ public class TrackCategoryListAdapter extends ArrayAdapter<TrackCategory>{
         }
 
         TrackCategory category = list.get(position);
-        ((TextView)convertView.findViewById(R.id.name)).setText(category.getName());
+        ((TextView)convertView.findViewById(R.id.name)).setText(category.getName().toUpperCase());
         ((TextView)convertView.findViewById(R.id.description)).setText(category.getDescription());
-
-//        Bitmap bitmap = BitmapFactory.decodeFile(path, bmOptions);
-//        myImageView.setImageBitmap(bitmap);
 
         ((UrlImageView)convertView.findViewById(R.id.catImageView)).setImageURL(category.getThumbnail());
 
