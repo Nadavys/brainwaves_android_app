@@ -1,1 +1,1 @@
-# brainwaves_android_app
+Example android file streaming player
